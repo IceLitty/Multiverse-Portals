@@ -20,6 +20,7 @@ import java.util.logging.Logger;
 import com.dumptruckman.minecraft.util.Logging;
 import com.onarandombox.MultiversePortals.listeners.MVPPlayerMoveListener;
 import com.onarandombox.MultiversePortals.listeners.PlayerListenerHelper;
+import com.sk89q.worldedit.WorldEdit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.Configuration;
@@ -376,8 +377,8 @@ public class MultiversePortals extends JavaPlugin implements MVPlugin {
      * @deprecated use {@link #getWorldEditConnection()} as this method will be removed.
      */
     @Deprecated
-    public WorldEditAPI getWEAPI() {
-        return getWorldEditConnection().worldEditAPI;
+    public WorldEdit getWEAPI() {
+        return getWorldEditConnection().worldEdit;
     }
 
     /**
@@ -441,14 +442,6 @@ public class MultiversePortals extends JavaPlugin implements MVPlugin {
     @Deprecated
     public static void staticDebugLog(Level level, String msg) {
         Logging.log(level, msg);
-    }
-
-    /**
-     * @deprecated why was this ever a public method??
-     */
-    @Deprecated
-    public void setWorldEditAPI(WorldEditAPI api) {
-        getWorldEditConnection().worldEditAPI = api;
     }
 
     @Override
