@@ -155,13 +155,13 @@
     </build>
     <dependencies>
         <!-- Start of Multiverse Core Dependency -->
-        <dependency>
-            <groupId>com.onarandombox.multiversecore</groupId>
-            <artifactId>Multiverse-Core</artifactId>
-            <version>2.5.1-SNAPSHOT</version>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.onarandombox.multiversecore</groupId>-->
+            <!--<artifactId>Multiverse-Core</artifactId>-->
+            <!--<version>2.5.1-SNAPSHOT</version>-->
+            <!--<type>jar</type>-->
+            <!--<scope>compile</scope>-->
+        <!--</dependency>-->
         <!-- End of Multiverse Core Dependency -->
 
         <!-- Start of WorldEdit Dependency -->

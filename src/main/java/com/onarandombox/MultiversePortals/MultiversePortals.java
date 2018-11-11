@@ -7,12 +7,7 @@
 
 package com.onarandombox.MultiversePortals;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -62,7 +57,7 @@ import com.onarandombox.MultiversePortals.listeners.MVPPlayerListener;
 import com.onarandombox.MultiversePortals.listeners.MVPPluginListener;
 import com.onarandombox.MultiversePortals.listeners.MVPVehicleListener;
 import com.onarandombox.MultiversePortals.utils.PortalManager;
-import com.pneumaticraft.commandhandler.multiverse.CommandHandler;
+import com.pneumaticraft.commandhandler.CommandHandler;
 import com.sk89q.worldedit.bukkit.WorldEditAPI;
 
 public class MultiversePortals extends JavaPlugin implements MVPlugin {
@@ -251,9 +246,11 @@ public class MultiversePortals extends JavaPlugin implements MVPlugin {
         // Read in our default config with UTF-8 now
         Configuration portalsDefaults = null;
         try {
-            portalsDefaults = YamlConfiguration.loadConfiguration(new BufferedReader(new InputStreamReader(resourceURL, "UTF-8")));
+//            portalsDefaults = YamlConfiguration.loadConfiguration(new BufferedReader(new InputStreamReader(resourceURL, "UTF-8")));
+            portalsDefaults = YamlConfiguration.loadConfiguration(new File(getDataFolder(), "config.yml"));
             this.MVPConfig.setDefaults(portalsDefaults);
-        } catch (UnsupportedEncodingException e) {
+        } catch (Exception e) {
+//        } catch (UnsupportedEncodingException e) {
             Logging.severe("Couldn't load default config with UTF-8 encoding. Details follow:");
             e.printStackTrace();
             Logging.severe("Default configs NOT loaded.");
@@ -340,7 +337,7 @@ public class MultiversePortals extends JavaPlugin implements MVPlugin {
         this.commandHandler.registerCommand(new SelectCommand(this));
         this.commandHandler.registerCommand(new WandCommand(this));
         this.commandHandler.registerCommand(new ConfigCommand(this));
-        for (com.pneumaticraft.commandhandler.multiverse.Command c : this.commandHandler.getAllCommands()) {
+        for (com.pneumaticraft.commandhandler.Command c : this.commandHandler.getAllCommands()) {
             if (c instanceof HelpCommand) {
                 c.addKey("mvp");
             }

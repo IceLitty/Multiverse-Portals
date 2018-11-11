@@ -7,14 +7,11 @@
 
 package com.onarandombox.MultiversePortals;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 import java.util.logging.Level;
 
+import com.dumptruckman.minecraft.util.Logging;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -167,7 +164,8 @@ public class MVPortal {
         allPortalFill.getChildren().put(this.fillPermission.getName(), true);
 
         this.plugin.getServer().getPluginManager().recalculatePermissionDefaults(all);
-        for(Player player : this.plugin.getServer().getOnlinePlayers()){
+//        for(Player player : this.plugin.getServer().getOnlinePlayers()){
+        for(Player player : Bukkit.getOnlinePlayers()){
             player.recalculatePermissions();
         }
     }

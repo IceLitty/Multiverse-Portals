@@ -1,6 +1,6 @@
 package com.onarandombox.MultiversePortals.listeners;
 
-import buscript.multiverse.Buscript;
+import buscript.Buscript;
 import com.onarandombox.MultiverseCore.api.MVDestination;
 import com.onarandombox.MultiverseCore.api.SafeTTeleporter;
 import com.onarandombox.MultiverseCore.enums.TeleportResult;
