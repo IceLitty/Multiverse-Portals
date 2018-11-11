@@ -1,7 +1,8 @@
 package com.onarandombox.MultiversePortals;
 
 import com.sk89q.worldedit.IncompleteRegionException;
-import com.sk89q.worldedit.Vector;
+import com.sk89q.worldedit.math.BlockVector3;
+import com.sk89q.worldedit.math.Vector3;
 import com.sk89q.worldedit.WorldEdit;
 import com.sk89q.worldedit.bukkit.BukkitPlayer;
 import com.sk89q.worldedit.bukkit.BukkitWorld;
@@ -95,7 +96,7 @@ public class WorldEditConnection {
 
         Region selection = getSelection(player);
         if (selection != null) {
-            Vector point = selection.getMaximumPoint();
+            BlockVector3 point = selection.getMaximumPoint();
             return new Location(player.getWorld(), point.getBlockX(), point.getBlockY(), point.getBlockZ());
         }
         return null;
@@ -115,7 +116,7 @@ public class WorldEditConnection {
 
         Region selection = getSelection(player);
         if (selection != null) {
-            Vector point = selection.getMinimumPoint();
+            BlockVector3 point = selection.getMinimumPoint();
             return new Location(player.getWorld(), point.getBlockX(), point.getBlockY(), point.getBlockZ());
         }
         return null;

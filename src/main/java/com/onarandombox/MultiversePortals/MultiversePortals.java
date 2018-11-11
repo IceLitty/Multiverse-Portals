@@ -59,7 +59,6 @@ import com.onarandombox.MultiversePortals.listeners.MVPPluginListener;
 import com.onarandombox.MultiversePortals.listeners.MVPVehicleListener;
 import com.onarandombox.MultiversePortals.utils.PortalManager;
 import com.pneumaticraft.commandhandler.CommandHandler;
-import com.sk89q.worldedit.bukkit.WorldEditAPI;
 
 public class MultiversePortals extends JavaPlugin implements MVPlugin {
 
